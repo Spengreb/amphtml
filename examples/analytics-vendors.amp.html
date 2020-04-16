@@ -68,6 +68,7 @@
       <option>euleriananalytics</option>
       <option>facebook-pixel</option>
       <option>gemius</option>
+      <option>gfk</option>
       <option>googleanalytics</option>
       <option>ibeatanalytics</option>
       <option>infonline</option>
@@ -666,6 +667,34 @@ For complete documentation and additional examples please see: https://marketing
 </script>
 </amp-analytics>
 <!-- End Gemius  example -->
+
+<amp-analytics type="gfk" id="gfk">
+{
+  "vars": {
+    "p": "au1",
+    "m": "novafm"
+  },
+  "triggers": {
+    "audioPlay": {
+      "on": "audio-play",
+      "request": "audio-play",
+      "selector": "#nova-player-1",
+      "vars": {
+        "c": "nova-player-1",
+        "pr": "${pageViewId64}"
+      }
+    },
+    "audioPause": {
+      "on": "audio-pause",
+      "request": "audio-stop",
+      "selector": "#nova-player-1",
+      "vars": {
+        "c": "nova-player-1"
+      }
+    }
+  }
+}
+</amp-analytics>
 
 <amp-analytics type="googleanalytics" id="googleanalytics">
 <script type="application/json">
