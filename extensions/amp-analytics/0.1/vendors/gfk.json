@@ -27,5 +27,10 @@
       },
       "request": "heartbeat"
     }
+  },
+  "transport": {
+    "beacon": false,
+    "xhrpost": false,
+    "image": true
   }
 }
