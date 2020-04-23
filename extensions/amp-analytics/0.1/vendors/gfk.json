@@ -15,19 +15,6 @@
     "ut": "${timestamp}",
     "ua": "${userAgent}"
   },
-  "triggers": {
-    "pulse": {
-      "on": "timer",
-      "timerSpec": {
-        "interval": 10,
-        "immediate": false,
-        "stopSpec": {
-          "on": "hidden"
-        }
-      },
-      "request": "heartbeat"
-    }
-  },
   "transport": {
     "beacon": false,
     "xhrpost": false,
