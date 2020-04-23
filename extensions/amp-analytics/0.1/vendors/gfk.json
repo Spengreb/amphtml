@@ -1,7 +1,7 @@
 {
   "requests": {
     "base": "https://${p}-config-preproduction.sensic.net/tp?p=${p}&m=${m}&t=${t}&sui=${sui}&r=${r}&ua=${ua}&ut=${ut}&pr=${pr}",
-    "audio-play": "${base}&ty=PL&c=${c}&pr=${pageViewId64}",
+    "audio-play": "${base}&ty=PL&c=${c}",
     "audio-stop": "${base}&ty=ST",
     "heartbeat": "${base}&ty=HB"
   },
@@ -13,7 +13,8 @@
     "t": "s2s-amp",
     "r": "${ampdocHost}",
     "ut": "${timestamp}",
-    "ua": "${userAgent}"
+    "ua": "${userAgent}",
+    "pr": "${pageViewId}-${selector}"
   },
   "transport": {
     "beacon": false,

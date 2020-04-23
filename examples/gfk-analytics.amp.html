@@ -18,7 +18,10 @@
 <body>
     <h1>Audio player</h1>
     <p>Play/Pause to send event</p>
-    <amp-audio id="audio-player" layout="" src="av/audio.mp3"> </amp-audio>
+    <amp-audio id="my-player" layout="" src="av/audio.mp3"> </amp-audio>
+
+    <p>Play/Pause to send event</p>
+    <amp-audio id="my-player2" layout="" src="av/audio.mp3"> </amp-audio>
 
     <amp-analytics type="gfk">
         <script type="application/json">
@@ -31,18 +34,37 @@
                 "audioPlay": {
                     "on": "audio-play",
                     "request": "audio-play",
-                    "selector": "#audio-player",
+                    "selector": "#my-player",
                     "vars": {
                         "c": "myCategory",
-                        "pr": "${pageViewId64}"
+                        "selector": "my-player"
                     }
                 },
                 "audioPause": {
                     "on": "audio-pause",
                     "request": "audio-stop",
-                    "selector": "#audio-player",
+                    "selector": "#my-player",
                     "vars": {
-                        "c": "myCategory"
+                        "c": "myCategory",
+                        "selector": "my-player2"
+                    }
+                },
+                "audioPlay2": {
+                    "on": "audio-play",
+                    "request": "audio-play",
+                    "selector": "#my-player2",
+                    "vars": {
+                        "c": "myCategory",
+                        "selector": "my-player2"
+                    }
+                },
+                "audioPause2": {
+                    "on": "audio-pause",
+                    "request": "audio-stop",
+                    "selector": "#my-player2",
+                    "vars": {
+                        "c": "myCategory",
+                        "selector": "my-player2"
                     }
                 }
             }
