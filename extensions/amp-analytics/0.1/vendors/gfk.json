@@ -1,20 +1,26 @@
 {
   "requests": {
-    "base": "https://${p}-config-preproduction.sensic.net/tp?p=${p}&m=${m}&t=${t}&sui=${sui}&r=${r}&ua=${ua}&ut=${ut}&pr=${pr}",
-    "audio-play": "${base}&ty=PL&c=${c}",
-    "audio-stop": "${base}&ty=ST",
-    "heartbeat": "${base}&ty=HB"
+    "base": "https://${p}-config-preproduction.sensic.net/tp?${page_params}&${client_params}",
+    "page_params": "r=${r}&ua=${ua}&v=${v}&l=${l}",
+    "client_params": "p=${p}&m=${m}",
+    "event_params": "ut=${ut}&pr=${pr}&rn=${rn}&c=${c}&sd=${sd}",
+    "audio-play": "${base}&${event_params}&ty=PL&sn=COUNTER(play_${pr})",
+    "audio-stop": "${base}&${event_params}&ty=ST&sn=COUNTER(stop_${pr})",
+    "heartbeat": "${base}${event_params}&ty=HB"
   },
   "vars": {
-    "sui": "${clientId(sui)}",
     "ty": "HB",
-    "p": "au1",
     "c": "default",
-    "t": "s2s-amp",
+    "v": "0.0.1",
     "r": "${ampdocHost}",
     "ut": "${timestamp}",
     "ua": "${userAgent}",
-    "pr": "${pageViewId}-${selector}"
+    "l": "${browserLanguage}",
+    "pr": "${pageViewId}${selector}",
+    "rn": "${requestCount}",
+    "sd": "-1",
+    "sp": "-1",
+    "st": "${ut}"
   },
   "transport": {
     "beacon": false,
