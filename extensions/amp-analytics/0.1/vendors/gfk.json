@@ -3,7 +3,7 @@
     "base": "https://${p}-config-preproduction.sensic.net/tp?${page_params}&${client_params}",
     "page_params": "r=${r}&ua=${ua}&v=${v}&l=${l}",
     "client_params": "p=${p}&m=${m}",
-    "event_params": "ut=${ut}&pr=${pr}&rn=${rn}&c=${c}&sd=${sd}",
+    "event_params": "ut=${ut}&pr=${pr}&rn=${rn}&c=${c}",
     "audio-play": "${base}&${event_params}&ty=PL&sn=COUNTER(play_${pr})",
     "audio-stop": "${base}&${event_params}&ty=ST&sn=COUNTER(stop_${pr})",
     "heartbeat": "${base}${event_params}&ty=HB"
@@ -18,7 +18,6 @@
     "l": "${browserLanguage}",
     "pr": "${pageViewId}${selector}",
     "rn": "${requestCount}",
-    "sd": "-1",
     "sp": "-1",
     "st": "${ut}"
   },
